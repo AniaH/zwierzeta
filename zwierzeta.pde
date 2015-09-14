@@ -61,6 +61,7 @@ void draw() {
         showAnimalName(animalNames[i]);
       }
       else if (mouseButton == RIGHT) {
+        minim.stop();
         playAnimalSound(animalSounds[i]);
       }
     }
