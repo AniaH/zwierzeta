@@ -21,14 +21,10 @@ void setup() {
 
 void showAnimalImage()
 {
-  if (key == animalKeys[0]) {
-    image (animals[0], 0, 0);
-  }
-  if (key == animalKeys[1]) {
-    image (animals[1], 0, 0);
-   }
-  if (key == animalKeys[2]) {
-    image (animals[2], 0, 0);
+  for (int i = 0; i < animals.length; ++i) {
+    if (key == animalKeys[i]) {
+        image(animals[i], 0, 0); 
+    }
   }
   if (key == ' ') {
     int randId = int(random(animals.length));
@@ -43,7 +39,7 @@ void draw() {
   if (keyPressed)  {
     currentKey = key;
     showAnimalImage();
-  }  
+  } 
   
   if (currentKey == animalKeys[0] && mousePressed) {
     if (mouseButton == LEFT) {
@@ -51,7 +47,8 @@ void draw() {
       fill(0, 200, 0);
     }
     else if(mouseButton == RIGHT) {
-      player = minim.loadFile("kwa.mp3");
+      minim.stop();
+      player = minim.loadFile("data/kwa.mp3");
       player.play();
     }
   }
@@ -61,7 +58,8 @@ void draw() {
       fill(150, 0, 0);
     }
     else if(mouseButton == RIGHT) {
-      player = minim.loadFile("muu.mp3");
+      minim.stop();
+      player = minim.loadFile("data/muu.mp3");
       player.play();
     }
   }
@@ -71,7 +69,8 @@ void draw() {
       fill(55, 0, 200);
     }
     else if(mouseButton == RIGHT) {
-      player = minim.loadFile("bee.mp3");
+      minim.stop();
+      player = minim.loadFile("data/bee.mp3");
       player.play();
     }
   }
