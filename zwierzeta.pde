@@ -22,7 +22,6 @@ void showAnimalImage()
 {
   for (int i = 0; i < animals.length; ++i) {
     if (key == animalKeys[i]) {
-        minim.stop();
         image(animals[i], 0, 0); 
     }
   }
